@@ -46,6 +46,5 @@ A modern, responsive landing page for a Learning Management System (LMS) built w
 - `npm run lint`: Runs ESLint to check for code quality issues.
 - `npm run preview`: Previews the production build locally.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🤝 Development
+Developed By Dinuja Dulsara Herath
