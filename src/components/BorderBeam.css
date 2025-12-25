@@ -1,0 +1,30 @@
+.border-beam-container {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    /* top: 0; right: 0; bottom: 0; left: 0; */
+    border-radius: inherit;
+    border: var(--border-beam-width) solid transparent;
+
+    /* Masking Logic */
+    -webkit-mask-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+    mask-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+
+    -webkit-mask-clip: padding-box, border-box;
+    mask-clip: padding-box, border-box;
+
+    /* Note: "intersect" isn't fully standard cross-browser for composite, 
+       but for this border trick, "source-in" or "xor" usually handles the layering 
+       if the setup is right. The User provided code uses "intersect". 
+       For WebKit, often source-in or standard composite `intersect`. 
+    */
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+.border-beam {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(to left, var(--color-from), var(--color-to), transparent);
+    offset-path: rect(0 auto auto 0 round var(--size)px);
+}
